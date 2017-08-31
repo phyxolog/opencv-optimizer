@@ -81,7 +81,8 @@ def optimize_file(file_path, save_to_file, blur_face=False, buffer=False):
 
     if blur_face:
         image = blur_faces(image)
-        image = crop_and_blur(image, int(round(new_width)), int(round(new_height)), int(round(nw)), int(round(nh)))
+    
+    image = crop_and_blur(image, int(round(new_width)), int(round(new_height)), int(round(nw)), int(round(nh)))
 
     cv2.imwrite(save_to_file, image, [int(cv2.IMWRITE_JPEG_QUALITY), 100,
                                       int(cv2.IMWRITE_JPEG_PROGRESSIVE), True,
